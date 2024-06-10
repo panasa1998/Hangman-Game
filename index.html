@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        min-height: 100vh;
+        background-image: url(bg.jpeg);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    
+        
+
+    }
+    .main{
+        display: flex;
+        align-items: center; 
+        justify-content: center; 
+        min-height: 100vh;
+    
+    }
+    .container{
+        border: 1px solid transparent;
+        display: grid;
+        width: 60%;
+        height: 60vh;
+        padding: 20px 40px;
+        border-radius: 20px;
+        margin-bottom: 12%;
+        box-shadow: 0px 0px 10px 3px black;
+        backdrop-filter: blur(1px);
+    }
+    .container h2{
+        text-align: center;
+        color: greenyellow;
+        text-shadow: 1px 2px 3px black;
+        font-size: 25px;
+    }
+    .instructions{
+        font-weight: 600;
+        font-size: 20px;
+    }
+    .btn1{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #btn{
+        width: 130px;
+        height: 40px;
+        border-radius: 15px;
+        border: none;
+        font-weight: 600;
+        font-size: 18px;
+        background: linear-gradient( 60deg, rgb(29, 157, 174),aliceblue,rgb(211, 85, 85));
+        cursor: pointer;
+        
+    }
+    #btn:hover{
+        scale: 1.2;
+        transition: 0.6s ease-in-out;
+    }
+    .title h1{
+       text-align: center;
+       margin-top: 2%;
+       text-shadow: 0px 1px 3px red;
+    }
+    @media screen and (max-width:600px){
+        .container{
+            width: 80%;
+            height: 75vh;
+            padding: 0px 20px;
+
+        }
+        
+    }
+</style>
+<body>
+    <div class="title">
+     <h1>Hangman Game</h1>
+    </div>
+    <div class="main">
+    <div class="container">
+        <h2>Game instructions</h2>
+        <ol class="instructions">
+            <li>Guess the word based on the hint.</li>
+            <li>There will be a hint to guess the word.</li>
+            <li>For every wrong guess letter will be counted</li>
+            <li>Maximum guesses will be 6.</li>
+            <li>If the worng guesses count reaches maximum guesses. You will loss the game</li>
+            <li>Click the below button to play the game.</li>
+        </ol>
+        <div class="btn1">
+        <button id="btn">Start Game</button>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        let button=document.getElementById("btn")
+        button.addEventListener("click",()=>{
+            window.location.href="http://127.0.0.1:5500/hangman.html"
+        })
+    </script>
+    
+</body>
+</html>

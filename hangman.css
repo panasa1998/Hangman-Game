@@ -1,0 +1,337 @@
+* {
+  box-sizing: border-box;
+  font-family: "Open-Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: rgb(97, 117, 186); 
+  background-image: url(plain-bg.jpeg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+     
+}
+.container {
+  width: 900px;
+  background-color: transparent;
+  display: flex;
+  align-items: flex-end;
+  padding: 30px 50px;
+  gap: 70px;
+  position: fixed;
+  border-radius: 15px;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 10px 5px black;
+}
+.hangman-box {
+  padding: 20px 30px;
+  position: relative;
+  margin: auto;
+  height: 350px;
+  width: 450px;
+}
+.figure-container {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  margin-top: 20%;
+}
+.figure-part {
+  display: none;
+}
+.hangman-box h1 {
+  font-size: 35px;
+  color: red;
+  text-shadow: 1px 1px 2px black;
+  margin-left: 160%;
+  margin-top: -20%;
+}
+.word-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  text-align: center;
+}
+.word-display .letter {
+  width: 20px;
+  border-bottom: 3px solid black;
+  margin-bottom: 40px;
+}
+.word-display .letter.guessed {
+  border-bottom: transparent;
+  margin-top: -20px;
+  color:aliceblue;
+  font-weight: 600;
+  
+
+}
+.game-box h4 {
+  font-size: 16px;
+  margin-bottom: 40px;
+  text-align: center;
+  color: aliceblue;
+}
+.game-box .guesses-text b {
+  color: greenyellow;
+
+}
+.game-box .keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.keyboard button {
+  width: 35px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  background-color: gray;
+  height: 25px;
+  border: none;
+  font-weight: 600;
+  box-shadow: 0.5px 0.5px 0.5px 1px black;
+  cursor: pointer;
+}
+.keyboard button:hover {
+  background-color: aliceblue;
+}
+.game-model img {
+  width: 150px;
+}
+.game-model {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  transition: opacity 0.4 ease;
+}
+.game-model.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+.game-model .content {
+  max-width: 300px;
+  background: rgb(67, 60, 60);
+  text-align: center;
+  border-radius: 10px;
+  color: aliceblue;
+  padding: 20px;
+}
+.game-model h4 {
+  font-size: 20px;
+}
+.game-model p {
+  font-size: 16px;
+  padding: 10px 15px;
+}
+.game-model p b {
+  color: greenyellow;
+}
+.game-model button {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(114, 175, 237);
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+}
+.game-model button:hover {
+  background-color: rgb(124, 189, 211);
+}
+@media screen and (max-width: 320px) {
+  .container {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .hangman-box {
+    padding: 0px 45px;
+    position: relative;
+    bottom: 60px;
+    height: 250px;
+    width: 350px;
+  }
+  .hangman-box h1 {
+    margin-left: 5%;
+    margin-top: 5px;
+    position: relative;
+    top: 50px;
+  }
+  .game-box .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .game-box h4 {
+    font-size: 12px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  .word-display{
+    gap: 2px;
+  }
+  .word-display .letter {
+    width: 20px;
+    border-bottom: 3px solid black;
+    margin-bottom: 25px;
+  }
+}
+@media screen and (min-width: 321px) and (max-width: 424px) {
+  .container {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .hangman-box {
+    padding: 0px 40px;
+    position: relative;
+    height: 250px;
+    width: 350px;
+    bottom: 20px;
+    margin-bottom: 20%;
+    margin-left: 10%;
+  }
+  .hangman-box h1 {
+    margin-left: 5%;
+    margin-top: 15%;
+    position: relative;
+    top: 50px;
+  }
+  .game-box .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25%;
+  }
+  .game-box h4 {
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .word-display .letter {
+    width: 20px;
+    border-bottom: 3px solid black;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 376px) and (max-width: 767px) {
+  .container {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .hangman-box {
+    padding: 0px 40px;
+    position: relative;
+    height: 250px;
+    width: 350px;
+    margin-top: -5%;
+    margin-left: 15%;
+    bottom: 20px;
+  }
+  .hangman-box h1 {
+    margin-left: 10%;
+    margin-top: 5%;
+    position: relative;
+    top: 15px;
+  }
+  .game-box .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  .game-box h4 {
+    font-size: 12px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  .word-display .letter {
+    width: 20px;
+    border-bottom: 3px solid black;
+    margin-bottom: 20px;
+    
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 900px) {
+  .container {
+    width: 90%;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+  }
+  .hangman-box {
+    margin-top: 40px;
+    position: relative;
+    left: 30px;
+    top: 50px;
+  }
+  .game-box {
+    position: relative;
+    right: 50px;
+  }
+  .keyboard button {
+    width: 40px;
+  }
+  .game-box .keyboard {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -45%;
+    width: 400px;
+  }
+  .hangman-box h1 {
+    margin-left: 125%;
+    margin-top: -25%;
+    position: relative;
+    bottom: 50px;
+  }
+  .word-display .letter {
+    width: 20px;
+    border-bottom: 3px solid black;
+    margin-bottom: 80px;
+  }
+}

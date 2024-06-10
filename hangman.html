@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman</title>
+    <link rel="icon" type="image/x-icon" href="./icon.png">
+    <link rel="stylesheet" href="hangman.css">
+    <script src="wordList.js" defer></script>
+    <script src="hangman.js" defer></script>
+    
+    
+</head>
+<body>
+    <div class="game-model">
+        <!-- Emoji in case of lost game -->
+        <div class="content">
+            <img src="sad.png" alt="gif">
+            <h4>Game Over</h4>
+            <p>The correct word is : <b>Rainbow</b></p>
+            <button class="play-again">Play Again</button>
+        </div>
+    </div>
+    <div class="container">
+       
+        <div class="hangman-box">   
+                <h1>Hangman</h1>
+            <svg class="figure-container " height="250px" width="200px">
+                <!-- Hangman figure -->
+                <line x1="60" y1="20" x2="140" y2="20"/>
+                <line x1="140" y1="20" x2="140" y2="50"/>
+                <line x1="60" y1="20" x2="60" y2="230"/>
+                <line x1="-10" y1="230" x2="160" y2="230"/>
+
+                <g class="figure-group">
+                <!-- Head -->
+                <circle cx="140" cy="70" r="20" class="figure-part"/>
+
+                <!-- body parts -->
+                <line x1="140" y1="90" x2="140" y2="150" class="figure-part"/>
+
+                <!-- arms -->
+                <line x1="140" y1="120" x2="120" y2="100" class="figure-part"/>
+                <line x1="140" y1="120" x2="160" y2="100" class="figure-part"/>
+
+                <!-- legs -->
+                <line x1="140" y1="150" x2="120" y2="180" class="figure-part"/>
+                <line x1="140" y1="150" x2="160" y2="180" class="figure-part"/>
+                </g>
+                
+            </svg>
+            
+        </div>
+        <div class="game-box">
+            <!-- word display -->
+            <ul class="word-display"></ul>
+
+            <!-- Hint to guess the word -->
+            <h4 class="hint-text">
+                Hint:
+                <b>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</b>
+            </h4>
+            <!-- To count the incorrect guesses -->
+            <h4 class="guesses-text">
+                Incorrect guesses:
+                <b>0/6</b>
+            </h4>
+            <!-- Keyboard buttons to enter the letters -->
+            <div class="keyboard">
+                
+            </div>
+    </div>
+</body>
+</html>
