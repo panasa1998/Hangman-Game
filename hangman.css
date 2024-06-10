@@ -245,6 +245,9 @@ body {
     border-bottom: 3px solid black;
     margin-bottom: 30px;
   }
+  .word-display{
+    gap: 2px;
+  }
 }
 
 @media screen and (min-width: 376px) and (max-width: 767px) {
